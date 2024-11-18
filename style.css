@@ -1,0 +1,364 @@
+/* Reset some basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Fira Code', monospace;
+  background-color: #0f0f0f;
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* macOS-style buttons */
+.mac-buttons {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+}
+.mac-btn {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 5px;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+.red { background-color: #FF5F57; }
+.yellow { background-color: #FFBD2E; }
+.green { background-color: #27C93F; }
+
+.mac-btn:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+/* Navigation Bar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #222;
+  padding: 10px 20px;
+  z-index: 500;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease-in-out;
+}
+.navbar:hover {
+  background-color: #111;
+}
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+.navbar li {
+  margin: 0 20px;
+}
+.navbar .nav-link {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 16px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.navbar .nav-link:hover {
+  color: #FFC630;
+  transform: translateY(-3px);
+}
+
+/* Sections */
+.section {
+  padding: 100px 20px 80px;
+  text-align: center;
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.terminal {
+  font-family: 'Fira Code', monospace;
+  background: #111; /* Darker background for better contrast */
+  color: #33cc33; /* Light green text for visibility */
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 50px;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  animation: glow 1s infinite alternate;
+  overflow-wrap: break-word; /* Prevents text from overflowing */
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(51, 204, 51, 0.2); /* Subtle glow */
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(51, 204, 51, 0.6); /* Stronger glow */
+  }
+}
+
+.line {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.prompt {
+  color: #33cc33;
+}
+
+.highlight {
+  color: #FFC630;
+}
+
+.link {
+  color: #0f7dff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Skills, Projects, and Contact Sections */
+.skill-list, .project-list, .academic-experience {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  animation: fadeIn 1s ease-out;
+}
+
+.project {
+  background-color: #333;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Hide anything that overflows */
+}
+
+.project img {
+  width: 100%;
+  height: 200px; /* Adjust based on your preference */
+  object-fit: cover; /* Makes sure the image covers the container without stretching */
+  border-radius: 8px; /* Optional: Add rounded corners to the image */
+}
+
+.project:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.skill, .project, .academic-item {
+  background-color: #333;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill:hover, .project:hover, .academic-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.icon-effect {
+  font-size: 40px;
+  color: #FFC630;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon-effect:hover {
+  transform: scale(1.2);
+  color: #fff;
+}
+
+.icon-effect:active {
+  transform: scale(0.95);
+}
+
+/* Adding a pulse animation for the footer */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #222;
+  color: #fff;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Slightly smaller font size */
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar li {
+    margin: 10px 0;
+  }
+
+  .terminal {
+    max-width: 90%; /* Max width reduced for mobile */
+    margin-top: 20px;
+    padding: 15px;
+  }
+
+  .project {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .skill-list, .project-list, .academic-experience {
+    flex-direction: column;
+  }
+
+  .project img {
+    height: 150px; /* Reduce image height */
+  }
+
+  .mac-buttons {
+    top: 5px;
+    left: 5px;
+  }
+
+  footer {
+    padding: 15px 0;
+  }
+}
+
+/* Tablet View (between 768px and 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .navbar ul {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .terminal {
+    max-width: 80%; /* Larger than mobile but still responsive */
+  }
+
+  .project {
+    width: 45%; /* 2 projects per row */
+  }
+
+  .skill-list, .project-list, .academic-experience {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+ /* Terminal entrance animation */
+ @keyframes terminalEntrance {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Subtle typing effect */
+@keyframes codeTyping {
+  0% {
+      width: 0;
+      opacity: 1;
+  }
+  100% {
+      width: 100%;
+      opacity: 1;
+  }
+}
+
+/* Glowing Border Effect */
+.terminal {
+  animation: glowingBorder 1.5s infinite alternate;
+}
+
+@keyframes glowingBorder {
+  0% {
+      border-color: rgba(0, 255, 0, 0.7);
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+  }
+  50% {
+      border-color: rgba(0, 255, 255, 0.7);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+  }
+  100% {
+      border-color: rgba(255, 0, 255, 0.7);
+      box-shadow: 0 0 30px rgba(255, 0, 255, 0.7);
+  }
+}
+
+/* Adjust link colors */
+a.link {
+  color: #00ff00; /* Light green for terminal feel */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+a.link:hover {
+  color: #ff6347; /* Red on hover for a dynamic feel */
+}
+
+/* Terminal style for the prompt */
+.prompt {
+  color: #00ff00; /* Green for the prompt */
+}
+
+/* Highlight text */
+.highlight {
+  color: #ffc630; /* Yellow for important highlights */
+}
+
+/* Console log style */
+.console-log {
+  font-family: 'Courier New', Courier, monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 100%;
+}
